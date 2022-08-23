@@ -92,15 +92,6 @@ Resources:
       CodeUri: putItemFunction
     Metadata:
       SamResourceId: putItemFunction
-  SampleTable:
-    Type: AWS::Serverless::SimpleTable
-    Properties:
-      PrimaryKey:
-        Name: id
-        Type: String
-      ProvisionedThroughput:
-        ReadCapacityUnits: 2
-        WriteCapacityUnits: 2
   OrdersTable:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -118,9 +109,7 @@ Resources:
       TimeToLiveSpecification:
         AttributeName: ExpirationTime
         Enabled: true
-      ProvisionedThroughput:
-        ReadCapacityUnits: '10'
-        WriteCapacityUnits: '5'
+      BillingMode: PAY_PER_REQUEST
     DependsOn:
     - DynamoDBQueryPolicy
   DynamoDBQueryPolicy:
