@@ -116,9 +116,57 @@ Resources:
       PrimaryKey:
         Name: id
         Type: String
-      ProvisionedThroughput:
-        ReadCapacityUnits: 2
-        WriteCapacityUnits: 2
+      BillingMode: "PAY_PER_REQUEST"
+
+  #Commands to create a table in CloudFormation
+  OrdersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: DanialAuthorsTable_prod
+      AttributeDefinitions:
+        - AttributeName: "AuthorName"
+          AttributeType: "S"
+        - AttributeName: "BookTitle"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "AuthorName"
+          KeyType: "HASH"
+        - AttributeName: "BookTitle"
+          KeyType: "RANGE"
+      TimeToLiveSpecification:
+        AttributeName: "ExpirationTime"
+        Enabled: true
+      BillingMode: "PAY_PER_REQUEST"
+        
+    DependsOn:
+      - DynamoDBQueryPolicy
+
+  DynamoDBQueryPolicy:
+    Type: "AWS::IAM::Policy"
+    Properties:
+      PolicyName: DynamoDBQueryPolicy
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action: "dynamodb:Query"
+            Resource: "*"
+      Roles:
+        - Ref: "OrdersTableQueryRole"
+
+  OrdersTableQueryRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service:
+                - "dynamodb.amazonaws.com"
+            Action:
+              - "sts:AssumeRole"
+      Path: "/"
 
 Outputs:
   WebEndpoint:
