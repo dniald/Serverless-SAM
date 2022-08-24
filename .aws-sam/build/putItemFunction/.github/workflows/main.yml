@@ -24,8 +24,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:lambda:ap-southeast-1:323434321179:function:test
-          # arn:aws:iam::323434321179:role/gitOIDC
+          role-to-assume: arn:aws:iam::323434321179:role/gitOIDC
           role-session-name: samplerolesession
           # aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
