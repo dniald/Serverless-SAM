@@ -37,7 +37,7 @@ jobs:
       - name: deploy
         run: |
           sam build
-          sam deploy
+          sam deploy --no-confirm-changeset
          # zip -j deploy.zip ./*
          # aws lambda update-function-code --function-name=test --zip-file=fileb://deploy.zip
     
