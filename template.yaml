@@ -16,7 +16,7 @@ Resources:
   GithubDanialRole:
     Type: AWS::Serverless::Application
     Properties:
-      Location: './stacks/IAMRole.yml'
+      Location: './stacks/IAMRole.yaml'
 
   GetDataFunction:
     Type: AWS::Serverless::Function
