@@ -12,7 +12,6 @@ Globals:
     TracingEnabled: True
 
 Resources:
-
   GithubDanialRole:
     Type: AWS::Serverless::Application
     Properties:
