@@ -12,6 +12,7 @@ Globals:
     TracingEnabled: True
 
 Resources:
+  - IAMRole.yaml
 
   GetDataFunction:
     Type: AWS::Serverless::Function
