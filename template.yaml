@@ -12,10 +12,10 @@ Globals:
     TracingEnabled: True
 
 Resources:
-  # GithubDanialRole:
-  #   Type: AWS::Serverless::Application
-  #   Properties:
-  #     Location: './stacks/IAMRole.yaml'
+  GithubDanialRole:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: './stacks/IAMRole.yml'
 
   GetDataFunction:
     Type: AWS::Serverless::Function
