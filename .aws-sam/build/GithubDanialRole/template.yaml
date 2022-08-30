@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Amazon Lambda Danial - Role
+Resources:
+  GithubDanialRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Policies:
+      - PolicyName: lambda
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action: s3:ListBucket
+            Resource: arn:aws:s3:::test-bucket-tutorial/images
+          - Effect: Allow
+            Action:
+            - s3:PutObject
+            - s3:GetObjectAcl
+            - s3:GetObject
+            - s3:PutObjectVersionAcl
+            - s3:DeleteObject
+            - s3:PutObjectAcl
+            - s3:GetObjectVersion
+            Resource: arn:aws:s3:::test-bucket-tutorial/images/*
+          - Sid: test
+            Effect: Allow
+            Action: lambda:InvokeFunction
+            Resource: arn:aws:lambda:ap-southeast-1:323434321179:function:TestsHelper
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/ReadOnlyAccess
+      AssumeRolePolicyDocument:
+        Statement:
+        - Effect: Allow
+          Action: sts:AssumeRoleWithWebIdentity
+          Principal:
+            Federated: arn:aws:iam::323434321179:oidc-provider/token.actions.githubusercontent.com
+          Condition:
+            StringLike:
+              token.actions.githubusercontent.com:sub: repo:dniald/Serverless-SAM:*
