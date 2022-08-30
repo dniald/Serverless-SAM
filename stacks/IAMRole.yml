@@ -1,4 +1,8 @@
-GithubDanialRole:
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Amazon Lambda Danial - Role
+
+Resources: 
+  GithubDanialRole:
     Type: AWS::IAM::Role
     Properties:
       Policies:
