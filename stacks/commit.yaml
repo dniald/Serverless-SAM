@@ -16,9 +16,9 @@ Resources:
     Type: AWS::CodeCommit::Repository
     Properties:
       RepositoryName: mae-cluster-repo
-      RepositoryDescription: a description
+      RepositoryDescription: MAE development
       Triggers:
-      - Name: MyTrigger
+      - Name: maeTriggers
         CustomData: Project ID 12345
         DestinationArn:
           Ref: SNSarn
