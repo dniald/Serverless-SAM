@@ -17,43 +17,44 @@ Resources:
     Properties:
       Location: './stacks/commit.yaml'
 
+  Syamim:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: './stacks/code-commit.yaml'
   MAE:
     Type: AWS::Serverless::Application
     Properties:
       Location: './stacks/code-commit.yaml'
 
-  CodePipelineArtifactStoreBucket:
-    Type: AWS::Serverless::Application
-    Properties:
-      Location: './stacks/code-commit.yaml'
+  # CodePipelineArtifactStoreBucket:
+  #   Type: AWS::Serverless::Application
+  #   Properties:
+  #     Location: './stacks/code-commit.yaml'
   
-  CodePipelineArtifactStoreBucketPolicy:
-    Type: AWS::Serverless::Application
-    Properties:
-      Location: './stacks/code-commit.yaml'
+  # CodePipelineArtifactStoreBucketPolicy:
+  #   Type: AWS::Serverless::Application
+  #   Properties:
+  #     Location: './stacks/code-commit.yaml'
   
-  AmazonCloudWatchEventRole:
-    Type: AWS::Serverless::Application
-    Properties:
-      Location: './stacks/code-commit.yaml'
+  # AmazonCloudWatchEventRole:
+  #   Type: AWS::Serverless::Application
+  #   Properties:
+  #     Location: './stacks/code-commit.yaml'
 
-  AmazonCloudWatchEventRule:
-    Type: AWS::Serverless::Application
-    Properties:
-      Location: './stacks/code-commit.yaml'
+  # AmazonCloudWatchEventRule:
+  #   Type: AWS::Serverless::Application
+  #   Properties:
+  #     Location: './stacks/code-commit.yaml'
 
-  AppPipeline:
-    Type: AWS::Serverless::Application
-    Properties:
-      Location: './stacks/code-commit.yaml'
-      Parameters:
-        BranchName: !GetAtt BranchName.name
-        RepositoryName: !GetAtt RepositoryName.name
+  # AppPipeline:
+  #   Type: AWS::Serverless::Application
+  #   Properties:
+  #     Location: './stacks/code-commit.yaml'
 
-  CodePipelineServiceRole:
-    Type: AWS::Serverless::Application
-    Properties:
-      Location: './stacks/code-commit.yaml'
+  # CodePipelineServiceRole:
+  #   Type: AWS::Serverless::Application
+  #   Properties:
+  #     Location: './stacks/code-commit.yaml'
 
   GetDataFunction:
     Type: AWS::Serverless::Function

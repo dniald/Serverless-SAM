@@ -17,15 +17,15 @@ Resources:
     Properties:
       RepositoryName: mae-cluster-repo
       RepositoryDescription: MAE development
-      Triggers:
-      - Name: maeTriggers
-        CustomData: Project ID 12345
-        DestinationArn:
-          Ref: SNSarn
-        Branches:
-        - development
-        Events:
-        - all
+      # Triggers:
+      # - Name: maeTriggers
+      #   CustomData: Project ID 12345
+      #   DestinationArn:
+      #     Ref: SNSarn
+      #   Branches:
+      #   - development
+      #   Events:
+      #   - all
 
 Outputs:
   RepositoryID:
