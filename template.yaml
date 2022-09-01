@@ -47,8 +47,8 @@ Resources:
     Properties:
       Location: './stacks/code-commit.yaml'
       Parameters:
-        BranchName: !GetAtt BranchName
-        RepositoryName: !GetAtt RepositoryName
+        BranchName: !GetAtt BranchName.name
+        RepositoryName: !GetAtt RepositoryName.name
 
   CodePipelineServiceRole:
     Type: AWS::Serverless::Application
