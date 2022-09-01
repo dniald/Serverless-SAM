@@ -2,16 +2,16 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: MAE Test CodeCommit
 
 Parameters:
-  BranchName: Mae-eks-branch
-    Description: CodeCommit branch name
+  BranchName: 
+    Description: Mae-eks-branch
     Type: String
     Default: master
-  RepositoryName: Mae-eks-repo
-    Description: CodeCommit repo name
+  RepositoryName: 
+    Description: Mae-eks-repo
     Type: String
     Default: myrepo
-  ApplicationName: Mae-eks-app
-    Description: CodeDeploy application name
+  ApplicationName: 
+    Description: Mae-eks-app
     Type: String
     Default: DemoApplication
   BetaFleet:
