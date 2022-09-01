@@ -9,13 +9,23 @@ Parameters:
   # CodeKey:
   #   Type: String
   #   Description: key of zipped code
-  #   Default: test-react/my-app.zip
+  
 
 Resources:
   MAE:
     Type: AWS::CodeCommit::Repository
     Properties:
       RepositoryName: mae-cluster-repo
+      RepositoryDescription: a description
+      Triggers:
+      - Name: MyTrigger
+        CustomData: Project ID 12345
+        DestinationArn:
+          Ref: SNSarn
+        Branches:
+        - development
+        Events:
+        - all
 
 Outputs:
   RepositoryID:
