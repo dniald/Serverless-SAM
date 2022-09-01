@@ -20,6 +20,51 @@ Resources:
       Location: MAE\template.yaml
     Metadata:
       SamResourceId: MAE
+  CodePipelineArtifactStoreBucket:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: CodePipelineArtifactStoreBucket\template.yaml
+    Metadata:
+      SamResourceId: CodePipelineArtifactStoreBucket
+  CodePipelineArtifactStoreBucketPolicy:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: CodePipelineArtifactStoreBucketPolicy\template.yaml
+    Metadata:
+      SamResourceId: CodePipelineArtifactStoreBucketPolicy
+  AmazonCloudWatchEventRole:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: AmazonCloudWatchEventRole\template.yaml
+    Metadata:
+      SamResourceId: AmazonCloudWatchEventRole
+  AmazonCloudWatchEventRule:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: AmazonCloudWatchEventRule\template.yaml
+    Metadata:
+      SamResourceId: AmazonCloudWatchEventRule
+  AppPipeline:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: AppPipeline\template.yaml
+      Parameters:
+        BranchName:
+          Fn::GetAtt:
+          - BranchName
+          - name
+        RepositoryName:
+          Fn::GetAtt:
+          - RepositoryName
+          - name
+    Metadata:
+      SamResourceId: AppPipeline
+  CodePipelineServiceRole:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: CodePipelineServiceRole\template.yaml
+    Metadata:
+      SamResourceId: CodePipelineServiceRole
   GetDataFunction:
     Type: AWS::Serverless::Function
     Properties:

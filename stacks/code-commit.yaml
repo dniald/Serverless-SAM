@@ -6,12 +6,12 @@ Parameters:
     name: Mae-eks-branch
     Description: Mae-eks-branch desc
     Type: String
-    Default: master
+    Default: main
   RepositoryName: 
     name: Mae-eks-repo
     Description: Mae-eks-repo decs
     Type: String
-    Default: myrepo
+    # Default: myrepo
   ApplicationName: 
     name: Mae-eks-app 
     Description: Mae-eks-app desc
@@ -109,7 +109,7 @@ Resources:
           referenceType:
             - branch
           referenceName:
-            - master
+            - main
       Targets:
         - Arn: !Join 
             - ''
