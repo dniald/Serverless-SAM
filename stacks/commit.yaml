@@ -1,17 +1,23 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: CodeCommit Repo
+
 Parameters:
   CodeBucket:
     Type: String
     Description: Bucket in which you have code
     Default: code-bucket
+  # CodeKey:
+  #   Type: String
+  #   Description: key of zipped code
+  #   Default: test-react/my-app.zip
+
 Resources:
   MAE:
     Type: AWS::CodeCommit::Repository
     Properties:
       RepositoryName: mae-cluster-repo
+
 Outputs:
   RepositoryID:
     Description: ID of the created CodeCommit repo
-    Value:
-      Ref: MAE
+    Value: !Ref MAE

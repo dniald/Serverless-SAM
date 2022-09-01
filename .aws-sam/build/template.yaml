@@ -14,6 +14,12 @@ Resources:
       Location: GithubDanialRole\template.yaml
     Metadata:
       SamResourceId: GithubDanialRole
+  MAE:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: MAE\template.yaml
+    Metadata:
+      SamResourceId: MAE
   GetDataFunction:
     Type: AWS::Serverless::Function
     Properties:
