@@ -50,3 +50,7 @@ Resources:
           #   Condition:
           #     StringLike:
           #       token.actions.githubusercontent.com:sub: "repo:dniald/Serverless-SAM:*"
+
+Outputs:
+  GithubDanialRole:
+    Value: !GetAtt GithubDanialRole.Arn
