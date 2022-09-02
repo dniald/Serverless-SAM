@@ -18,9 +18,11 @@ Resources:
       Location: './stacks/commit.yaml'
 
   Syamim:
-    Type: AWS::Serverless::Application
+    Type: AWS::CodeCommit::Repository
     Properties:
-      Location: './stacks/code-commit.yaml'
+      RepositoryName: syamim-gg
+      RepositoryDescription: MAE development
+      
   MAE:
     Type: AWS::Serverless::Application
     Properties:
