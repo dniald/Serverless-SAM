@@ -14,12 +14,48 @@ Resources:
       Location: GithubDanialRole\template.yaml
     Metadata:
       SamResourceId: GithubDanialRole
-  Syamim:
+  Gardenia:
     Type: AWS::Serverless::Application
     Properties:
-      Location: Syamim\template.yaml
+      Location: Gardenia\template.yaml
     Metadata:
-      SamResourceId: Syamim
+      SamResourceId: Gardenia
+  CodePipelineArtifactStoreBucket:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: CodePipelineArtifactStoreBucket\template.yaml
+    Metadata:
+      SamResourceId: CodePipelineArtifactStoreBucket
+  CodePipelineArtifactStoreBucketPolicy:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: CodePipelineArtifactStoreBucketPolicy\template.yaml
+    Metadata:
+      SamResourceId: CodePipelineArtifactStoreBucketPolicy
+  AmazonCloudWatchEventRole:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: AmazonCloudWatchEventRole\template.yaml
+    Metadata:
+      SamResourceId: AmazonCloudWatchEventRole
+  AmazonCloudWatchEventRule:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: AmazonCloudWatchEventRule\template.yaml
+    Metadata:
+      SamResourceId: AmazonCloudWatchEventRule
+  AppPipeline:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: AppPipeline\template.yaml
+    Metadata:
+      SamResourceId: AppPipeline
+  CodePipelineServiceRole:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: CodePipelineServiceRole\template.yaml
+    Metadata:
+      SamResourceId: CodePipelineServiceRole
   MAE:
     Type: AWS::Serverless::Application
     Properties:
